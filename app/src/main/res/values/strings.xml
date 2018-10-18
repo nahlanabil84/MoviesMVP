@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MoviesMVP</string>
+    <string name="rating">(%1$.1f/10)</string>
+    <string name="q_hint_movie_name">Movie name</string>
+    <string name="error_fetching_movies">Error fetching movies</string>
+    <string name="no_internet_connection">No internet connection!!</string>
+    <string name="try_again">Try again</string>
+</resources>
