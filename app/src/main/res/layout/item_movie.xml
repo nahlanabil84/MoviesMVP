@@ -9,54 +9,72 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp">
 
         <ImageView
             android:id="@+id/posterIV"
-            android:layout_width="match_parent"
+            android:layout_width="120dp"
             android:layout_height="180dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:src="@color/colorAccent" />
 
         <TextView
             android:id="@+id/titleTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/posterIV"
-            android:layout_marginBottom="4dp"
             android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_toEndOf="@+id/posterIV"
             android:textColor="@color/colorBlack"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:text="Harry potter" />
+            tools:text="@string/hint_title" />
 
-        <TextView
-            android:id="@+id/yearTV"
+        <LinearLayout
+            android:id="@+id/containerLL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/titleTV"
             android:layout_marginStart="4dp"
-            android:textSize="14sp"
-            tools:text="(2011)" />
+            android:layout_marginEnd="4dp"
+            android:layout_toEndOf="@+id/posterIV"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-        <ImageView
-            android:id="@+id/ratingIV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/yearTV"
-            android:src="@drawable/ic_star"
-            android:tint="@color/colorAccent" />
+            <TextView
+                android:id="@+id/yearTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textSize="14sp"
+                tools:text="@string/hint_year" />
+
+            <ImageView
+                android:id="@+id/ratingIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star"
+                android:tint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/ratingTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                tools:text="@string/hint_rating" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/ratingTV"
-            android:layout_width="wrap_content"
+            android:id="@+id/overviewTV"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/yearTV"
-            android:layout_marginStart="4dp"
-            android:layout_toEndOf="@+id/ratingIV"
+            android:layout_below="@id/containerLL"
+            android:layout_margin="4dp"
+            android:layout_toEndOf="@+id/posterIV"
             android:textSize="14sp"
-            tools:text="7.3/10" />
+            tools:text="@string/hint_overview" />
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>

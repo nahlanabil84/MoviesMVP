@@ -10,6 +10,8 @@ public interface MoviesViewMVP {
 
     void showMessage(int stringResourceId);
 
+    void showMessage(String errorMsg);
+
     void listMovies(ResponseMoviesList response);
 
 }

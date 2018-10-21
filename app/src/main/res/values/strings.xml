@@ -5,4 +5,11 @@
     <string name="error_fetching_movies">Error fetching movies</string>
     <string name="no_internet_connection">No internet connection!!</string>
     <string name="try_again">Try again</string>
+    <string name="hint_overview">Harry, Ron, and Hermione search for Voldemort\'s remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.</string>
+    <string name="hint_rating">(7.3/10)</string>
+    <string name="hint_year">15-6-2011</string>
+    <string name="hint_title">Harry potter</string>
+    <string name="title_search">Search</string>
+    <string name="no_results">No results!!</string>
+    <string name="error_search_movie">Error search movie</string>
 </resources>

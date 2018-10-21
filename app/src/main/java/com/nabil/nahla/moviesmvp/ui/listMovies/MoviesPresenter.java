@@ -13,15 +13,25 @@ public class MoviesPresenter implements MoviesPresenterMVP, OnDataLoadedListener
     }
 
     @Override
-    public void loadMovies(int page) {
+    public void loadMovies(int page, String query) {
         viewMVP.showLoading();
-        modelMVP.getMovies(page, this);
+        if (query == null | query.equals("") | query.isEmpty()) {
+            modelMVP.getMovies(page, this);
+        } else {
+            modelMVP.searchMovies(page, query, this);
+        }
     }
 
     @Override
     public void onFailed(int stringResourceId) {
         viewMVP.hideLoading();
         viewMVP.showMessage(stringResourceId);
+    }
+
+    @Override
+    public void onFailed(String errorMsg) {
+        viewMVP.hideLoading();
+        viewMVP.showMessage(errorMsg);
     }
 
     @Override

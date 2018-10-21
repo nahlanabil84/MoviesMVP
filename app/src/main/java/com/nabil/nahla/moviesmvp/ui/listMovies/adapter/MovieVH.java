@@ -30,6 +30,9 @@ class MovieVH extends RecyclerView.ViewHolder {
     @BindView(R.id.ratingTV)
     TextView ratingTV;
 
+    @BindView(R.id.overviewTV)
+    TextView overviewTV;
+
     public MovieVH(final View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
@@ -44,6 +47,7 @@ class MovieVH extends RecyclerView.ViewHolder {
         titleTV.setText("");
         yearTV.setText("");
         ratingTV.setText("");
+        overviewTV.setText("");
     }
 
     public void onBind(ArrayList<Movie> movies) {
@@ -58,5 +62,6 @@ class MovieVH extends RecyclerView.ViewHolder {
         yearTV.setText(movies.get(getAdapterPosition()).getReleaseDate());
         ratingTV.setText(itemView.getContext().getResources()
                 .getString(R.string.rating, movies.get(getAdapterPosition()).getVoteAverage()));
+        overviewTV.setText(movies.get(getAdapterPosition()).getOverview());
     }
 }
