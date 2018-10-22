@@ -145,44 +145,56 @@ public class MoviesActivity extends AppCompatActivity implements MoviesViewMVP
     @Override
     public void listMovies(ResponseMoviesList response) {
         if (response != null) {
-            totalPages = response.getTotalPages();
-            increasePage();
 
-            if (page == 1) moviesList.clear();
+            if (page == 1) {
+                moviesList.clear();
+                adapter.notifyDataSetChanged();
+            }
+
             moviesList.addAll(response.getMovies());
             adapter.notifyDataSetChanged();
+
+            totalPages = response.getTotalPages();
+            increasePage();
         }
     }
 
     private void increasePage() {
-        if (page < totalPages) page++;
+        if (page <= totalPages) page++;
     }
 
     @Override
     public boolean onClose() {
-        query = "";
-        page = 1;
-        presenterMVP.loadMovies(page, query);
+        resetList();
         return false;
     }
 
     @Override
     public boolean onQueryTextSubmit(String s) {
-        if (query != s) {
-            query = s;
-            page = 1;
-            presenterMVP.loadMovies(page, query);
-        }
+        handleSearch(s);
         return false;
     }
 
     @Override
     public boolean onQueryTextChange(String s) {
-        if (query != s) {
+        handleSearch(s);
+        return false;
+    }
+
+    private void resetList() {
+        query = "";
+        page = 1;
+        presenterMVP.loadMovies(page, query);
+    }
+
+    private void handleSearch(String s) {
+        if (!query.equals(s)) {
             query = s;
             page = 1;
             presenterMVP.loadMovies(page, query);
         }
-        return false;
+        if(s.equals("")){
+            resetList();
+        }
     }
 }

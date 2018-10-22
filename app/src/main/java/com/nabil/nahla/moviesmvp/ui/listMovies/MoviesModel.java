@@ -43,7 +43,7 @@ public class MoviesModel implements MoviesModelMVP {
                         listener.onFailed(R.string.no_results);
 
                 } else
-                    listener.onFailed(response.errorBody().toString());
+                    listener.onFailed(R.string.error_search_movie);
             }
 
             @Override

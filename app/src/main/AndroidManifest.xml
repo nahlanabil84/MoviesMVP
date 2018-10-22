@@ -23,7 +23,6 @@
                 android:name="android.app.Searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".ui.searchResult.SearchResultActivity" />
     </application>
 
 </manifest>
